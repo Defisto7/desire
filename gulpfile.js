@@ -26,7 +26,7 @@ gulp.task('browser-sync', function() {
 function bsReload(done) { browserSync.reload(); done() };
 
 gulp.task('sass', function() {
-	return gulp.src('app/sass/**/*.sass')
+	return gulp.src('app/sass/**/*.+(scss|sass)')
 	.pipe(sass({outputStyle: 'expanded'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer({
@@ -117,7 +117,7 @@ gulp.task('code', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('app/sass/**/*.sass', gulp.parallel('sass'));
+	gulp.watch('app/sass/**/*.+(scss|sass)', gulp.parallel('sass'));
 	gulp.watch(['libs/**/*.js', 'app/js/common.js'], gulp.parallel('js'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 });
