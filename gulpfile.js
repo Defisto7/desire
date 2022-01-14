@@ -43,9 +43,9 @@ gulp.task('sass', function() {
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'app/js/common.js', // Всегда в конце
+		'app/js/main.js', // Всегда в конце
 		])
-	.pipe(concat('scripts.min.js'))
+	.pipe(concat('main.min.js'))
 	.pipe(uglify()) // Минимизировать весь js (на выбор)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }));
@@ -73,7 +73,7 @@ gulp.task('clearcache', function () { return cache.clearAll(); });
 
 gulp.task('buildFiles', function() { return gulp.src(['app/*.html', 'app/.htaccess']).pipe(gulp.dest('dist')) });
 gulp.task('buildCss', function() { return gulp.src(['app/css/main.min.css']).pipe(gulp.dest('dist/css')) });
-gulp.task('buildJs', function() { return gulp.src(['app/js/scripts.min.js']).pipe(gulp.dest('dist/js')) });
+gulp.task('buildJs', function() { return gulp.src(['app/js/main.min.js']).pipe(gulp.dest('dist/js')) });
 gulp.task('buildFonts', function() { return gulp.src(['app/fonts/**/*']).pipe(gulp.dest('dist/fonts')) });
 
 gulp.task('build', gulp.series('removedist', 'imagemin', 'sass', 'js', 'buildFiles', 'buildCss', 'buildJs', 'buildFonts'));
@@ -118,7 +118,7 @@ gulp.task('code', function() {
 
 gulp.task('watch', function() {
 	gulp.watch('app/sass/**/*.+(scss|sass)', gulp.parallel('sass'));
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], gulp.parallel('js'));
+	gulp.watch(['libs/**/*.js', 'app/js/main.js'], gulp.parallel('js'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 });
 
