@@ -14,6 +14,10 @@ $(function () {
     autoplay: true
   });
 
-  let mixer = mixitup('.gallery__inner');
+  let mixer = mixitup('.gallery__inner', {
+    load: {
+      filter: '.living'
+    }
+  });
 
 })
