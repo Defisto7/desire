@@ -44,6 +44,7 @@ gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/slick/slick.js',
+		'node_modules/mixitup/dist/mixitup.js',
 		'app/js/main.js', // Всегда в конце
 		])
 	.pipe(concat('main.min.js'))
