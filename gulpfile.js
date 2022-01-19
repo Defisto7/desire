@@ -45,6 +45,7 @@ gulp.task('js', function() {
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/slick/slick.js',
 		'node_modules/mixitup/dist/mixitup.js',
+		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
 		'app/js/main.js', // Всегда в конце
 		])
 	.pipe(concat('main.min.js'))

@@ -9,6 +9,7 @@
   "author": "WebDesign Master",
   "license": "ISC",
   "devDependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "browser-sync": "^2.27.5",
     "compress-images": "^1.9.9",
     "del": "^6.0.0",
@@ -28,5 +29,8 @@
     "pngquant-bin": "^6.0.0",
     "sass": "^1.42.1",
     "vinyl-ftp": "^0.6.1"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^4.0.18"
   }
 }
