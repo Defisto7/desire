@@ -715,3 +715,11 @@
     margin-top: -2px;
   }
 }
+.partners{
+  padding: 16px 0 60px;
+  &__item{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+  }
+}
