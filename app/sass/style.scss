@@ -329,7 +329,7 @@
 
 .new-collection{
   text-align: center;
-  padding: 45px 0 105px;
+  padding: 45px 0 35px;
   &__title{
     @extend %title-font;
     color: $title;
@@ -360,6 +360,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 30px;
+  padding-bottom: 70px;
   &__item{
     position: relative;
     &:hover{
@@ -717,9 +718,11 @@
 }
 .partners{
   padding: 16px 0 60px;
-  &__item{
+  &__items{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-
+  }
+  &__item{
+    margin: 0 auto;
   }
 }
