@@ -256,6 +256,8 @@
 .breadcrums{
   background: rgba(#DFDFDF, .5);
   padding: 13px 14px;
+  position: relative;
+  z-index: 5;
   &__list{
     display: flex;
   }
@@ -734,4 +736,8 @@
   &__item{
     margin: 0 auto;
   }
+}
+.map{
+  margin-top: -53px;
+  margin-bottom: 50px;
 }
