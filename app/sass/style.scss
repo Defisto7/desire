@@ -80,24 +80,6 @@
     margin-bottom: 16px;
     max-width: 475px;
   }
-  &__info-email{
-    font-weight: 600;
-    font-size: 14px;
-    color: $title;
-    margin-bottom: 22px;
-    padding-left: 30px;
-    display: inline-block;
-    position: relative;
-    &::before{
-      content: '';
-      background-image: url(../img/envelope.svg);
-      position: absolute;
-      top: 8px;
-      left: 0;
-      width: 16px;
-      height: 12px;
-    }
-  }
   &__form{
     display: flex;
   }
@@ -701,7 +683,7 @@
       background-color: #6D7278;
     }
   }
-  &__text{
+  &__text{ 
     margin-bottom: 30px;
   }
   &__content{
