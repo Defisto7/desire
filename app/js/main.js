@@ -20,6 +20,11 @@ $(function () {
     dots: true,
     arrows: false,
   });
+
+  $('.article-slider__box').slick({
+    prevArrow: '<button type="button" class="article-slider__arrow article-slider__arrowleft"><img src="img/arrow-left.svg" alt="arrow left"></button>',
+    nextArrow: '<button type="button" class="article-slider__arrow article-slider__arrowright"><img src="img/arrow-right.svg" alt="arrow right"></button>'
+  });
   
 
   let mixer = mixitup('.gallery__inner', {

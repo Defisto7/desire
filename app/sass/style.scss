@@ -922,6 +922,59 @@
     line-height: 38px;
     text-align: center;
   }
+  &__blockquote-author{
+    font-size: 16px;
+    line-height: 22px;
+    color: $title;
+    @extend %title-font;
+    margin-top: 23px;
+    padding-top: 23px;
+    position: relative;
+    font-style: normal;
+    &::before{
+      content:"";
+      position: absolute;
+      background: #6D7278;
+      border-radius: 1px;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 1px;
+      width: 200px;
+      margin: 0 auto;
+    }
+  }
+  &__item-popup{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.article-popup{
+  &__box{
+    position: relative;
+     
+  }
+}
+
+.article-slider{
+  &__arrow{
+    padding: 0;
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    transition: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+  }
+  &__arrowleft{
+    left: 16px;
+  }
+  &__arrowright{
+    right: 16px;
+  }
 }
 
 .recent-post{
