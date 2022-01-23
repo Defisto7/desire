@@ -16,7 +16,7 @@ var gulp         = require('gulp'),
 gulp.task('browser-sync', function() {
 	browserSync.init({
 		server: {
-			baseDir: 'app'
+			baseDir: 'dist'
 		},
 		notify: false,
 		// online: false, // Work offline without internet connection
@@ -26,7 +26,7 @@ gulp.task('browser-sync', function() {
 function bsReload(done) { browserSync.reload(); done() };
 
 gulp.task('sass', function() {
-	return gulp.src('app/sass/**/*.+(scss|sass)')
+	return gulp.src('src/sass/**/*.+(scss|sass)')
 	.pipe(sass({outputStyle: 'expanded'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer({
@@ -34,7 +34,7 @@ gulp.task('sass', function() {
 		overrideBrowserslist: ['last 10 versions']
 	}))
 	.pipe(cleanCSS()) // Опционально, закомментировать при отладке
-	.pipe(gulp.dest('app/css'))
+	.pipe(gulp.dest('dist/css'))
 	.pipe(browserSync.stream())
 });
 
@@ -42,21 +42,21 @@ gulp.task('sass', function() {
 
 gulp.task('js', function() {
 	return gulp.src([
-		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/slick/slick.js',
+		'src/libs/jquery/dist/jquery.min.js',
+		'src/libs/slick/slick.js',
 		'node_modules/mixitup/dist/mixitup.js',
 		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
-		'app/js/main.js', // Всегда в конце
+		'src/js/main.js', // Всегда в конце
 		])
 	.pipe(concat('main.min.js'))
 	.pipe(uglify()) // Минимизировать весь js (на выбор)
-	.pipe(gulp.dest('app/js'))
+	.pipe(gulp.dest('dist/js'))
 	.pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('imagemin', async function() {
 	imagecomp(
-		"app/img/**/*",
+		"dist/img/**/*",
 		"dist/img/",
 		{ compress_force: false, statistic: true, autoupdate: true }, false,
 		{ jpg: { engine: "mozjpeg", command: ["-quality", "75"] } },
@@ -100,11 +100,11 @@ gulp.task('deploy', function() {
 });
 
 gulp.task('rsync', function() {
-	return gulp.src('app/')
+	return gulp.src('src/')
 	.pipe(rsync({
 		root: 'dist/',
-		hostname: 'username@yousite.com',
-		destination: 'yousite/public_html/',
+		hostname: 'criska7@gmail.com',
+		destination: '#',
 		// include: ['*.htaccess'], // Included files
 		exclude: ['**/Thumbs.db', '**/*.DS_Store'], // Excluded files
 		recursive: true,
@@ -115,13 +115,13 @@ gulp.task('rsync', function() {
 });
 
 gulp.task('code', function() {
-	return gulp.src('app/**/*.html')
+	return gulp.src('src/**/*.html')
 	.pipe(browserSync.reload({ stream: true }))
 });
 
 gulp.task('watch', function() {
-	gulp.watch('app/sass/**/*.+(scss|sass)', gulp.parallel('sass'));
-	gulp.watch(['libs/**/*.js', 'app/js/main.js'], gulp.parallel('js'));
+	gulp.watch('src/sass/**/*.+(scss|sass)', gulp.parallel('sass'));
+	gulp.watch(['libs/**/*.js', 'src/js/main.js'], gulp.parallel('js'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 });
 
