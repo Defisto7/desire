@@ -1097,4 +1097,41 @@
     border-radius: 14px;
     display: inline-block;
   }
+  &__links{
+    padding: 40px 0 30px;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link{
+    width: 243px;
+    position: relative;
+    color: #707070;
+    font-size: 14px;
+    font-weight: 600;
+    &::before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 23px;
+    }
+  }
+  &__link-prev{
+    padding-left: 44px;
+    &::before{
+      background-image: url(../img/arrow-prew.svg);
+      left: 0;
+    }
+  }
+  &__link-next{
+    padding-right: 44px;
+    text-align: right;
+    &::before{
+      background-image: url(../img/arrow-next.svg);
+      right: 0;
+    }
+  }
 }
