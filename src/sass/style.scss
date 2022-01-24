@@ -1057,5 +1057,19 @@
    }
 }
 .blog-one__item{
-  
+  p{
+    margin-bottom: 40px;
+  }
+  blockquote{
+    font-size: 24px;
+    font-weight: 300;
+    font-style: italic;
+    color: $title;
+    margin-bottom: 30px;
+    padding: 0 40px;
+  }
+  .blog__blockquote-author::before{
+    margin-right: auto;
+    margin-left: 0;
+  }
 }
