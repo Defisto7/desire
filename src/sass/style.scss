@@ -17,6 +17,9 @@
     padding: 0;
     cursor: pointer;
   }
+  &__btn-menu{
+    display: none;
+  }
 }
 
 .logo{
@@ -36,7 +39,7 @@
   &__list-link{
     @extend %title-font;
     color: rgba(54, 56, 56, 0.9);
-    line-height: 22;
+    line-height: 22px;
   }
   &__list-link--active{
     padding-bottom: 4px;
@@ -1231,3 +1234,5 @@
     cursor: pointer;
    }
 }
+
+@import 'media';
