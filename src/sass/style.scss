@@ -242,14 +242,18 @@
   background: rgba(#DFDFDF, .5);
   padding: 13px 14px;
   position: relative;
-  z-index: 5;
+  z-index: 10;
   &__list{
     display: flex;
+    overflow-x: auto;
+  }
+  &__item{
+    position: relative;
   }
   &__item::after{
     content: '/';
-    margin-left: -4px;
-    margin-right: 4px;
+    padding-right: 8px;
+    position: absolute;
   }
   &__item:last-child::after{
     display: none;
