@@ -26,6 +26,15 @@
       margin-left: auto;
     }
   }
+  .gallery{
+    &__items{
+      grid-gap: 10px;
+    }
+    &__btn{
+      margin: 0;
+      padding: 6px 10px;
+    }
+  }
 }
 @media (max-width: 840px){
   .top{
@@ -103,6 +112,14 @@
   .works-path{
     &__item--measuring{
       margin-left: 100px;
+    }
+  }
+  .gallery{
+    &__buttons{
+      display: grid;
+    }
+    &__btn{
+      margin-bottom: 10px;
     }
   }
 }
@@ -208,6 +225,15 @@
       &__item-title{
         font-size: 16px;
         line-height: 27px;
+      }
+    }
+    .gallery{
+      &__items{
+        grid-template-columns: repeat(1, 1fr);
+      }
+      &__item:first-child{
+        grid-column: 1;
+        grid-row: 1;
       }
     }
 }
