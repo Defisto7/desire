@@ -161,6 +161,20 @@
       width: 100%;
     }
   }
+  .blog-box{
+    &__items{
+      display: block;
+    }
+    &__img-link{
+      display: block;
+    }
+    &__img{
+      width: 100%;
+    }
+    &__item{
+      margin-bottom: 20px;
+    }
+  }
 }
 @media (max-width: 540px){
   .logo{
@@ -220,6 +234,12 @@
     %title-font{
       font-size: 28px;
       line-height: 36px;
+    }
+    .blog-box{
+      &__item-title{
+        font-size: 22px;
+        line-height: 36px;
+      }
     }
     .works-path{
       &__item-title{
